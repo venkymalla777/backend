@@ -26,9 +26,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-%7dfr4jw-yr$+t0mwtz%v%aenaknhn3v_il2_mz54#ykhj*-af"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
-ALLOWED_HOSTS = []
+DEBUG = False
+
+ALLOWED_HOSTS = ['localhost',' Venky1777.pythonanywhere.com']
+
+# ALLOWED_HOSTS = []
 
 
 
@@ -105,16 +109,28 @@ WSGI_APPLICATION = "gramadevata.wsgi.application"
 # }
 
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': os.environ.get("DB_ENGINE"),
+#         'NAME': os.environ.get("DB_NAME"),
+#         'USER': os.environ.get("DB_USER"),
+#         'PASSWORD': os.environ.get("DB_PASSWORD"),
+#         'HOST': os.environ.get("DB_HOST"),  # Set to your MySQL server host
+#         'PORT': os.environ.get("DB_PORT")
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get("DB_ENGINE"),
-        'NAME': os.environ.get("DB_NAME"),
-        'USER': os.environ.get("DB_USER"),
-        'PASSWORD': os.environ.get("DB_PASSWORD"),
-        'HOST': os.environ.get("DB_HOST"),  # Set to your MySQL server host
-        'PORT': os.environ.get("DB_PORT")
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'gramadevata_db',
+        'USER': 'root',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost',   # Set to 'localhost' or the IP address of your MySQL server
+        'PORT': '3306',   # Default is '3306'
     }
 }
+
 
 
 
